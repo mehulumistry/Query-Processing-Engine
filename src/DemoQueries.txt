@@ -1,0 +1,122 @@
+=======**** Ad-hoc OLAP Queries PPT ****=======
+
+1. =======++*++=======
+
+cust,avg_1_quant,avg_2_quant,avg_3_quant
+3
+cust
+avg_1_quant,avg_2_quant,avg_3_quant
+mfs[i].cust.equals(cust) && state.equals("NY"),mfs[i].cust.equals(cust) && state.equals("NJ"),mfs[i].cust.equals(cust) && state.equals("CT")
+mfs[i].avg_1_quant > mfs[i].avg_2_quant && mfs[i].avg_1_quant > mfs[i].avg_3_quant
+where year=1995
+
+
+2. =======++*++=======
+
+prod, month,(float)sum_1_quant/sum_2_quant
+2
+prod,month
+sum_1_quant,sum_2_quant
+mfs[i].prod.equals(prod) && mfs[i].month == month,mfs[i].prod.equals(prod)
+
+where year=1995
+
+3. =======++*++=======
+
+3.1
+
+cust,month,avg_1_quant,avg_quant,avg_2_quant
+2
+cust,month
+avg_1_quant,avg_quant,avg_2_quant
+mfs[i].cust.equals(cust) && mfs[i].month < month,mfs[i].cust.equals(cust) && mfs[i].month > month
+mfs[i].avg_1_quant>=mfs[i].avg_quant&&mfs[i].avg_2_quant>=mfs[i].avg_quant
+where year=1995
+
+
+3.2 // variation
+
+cust,month,avg_1_quant,avg_3_quant,avg_2_quant
+3
+cust,month
+avg_1_quant,avg_3_quant,avg_2_quant
+mfs[i].cust.equals(cust) && mfs[i].month < month,mfs[i].cust.equals(cust) && mfs[i].month > month,mfs[i].cust.equals(cust) && mfs[i].month == month
+
+where year=1995
+
+
+// gv0 is to be incorporated for this query
+
+4. =======++*++=======  // condition check
+
+prod,month,count_3_prod
+3
+prod,month
+count_3_prod,avg_1_quant,avg_2_quant
+mfs[i].prod.equals(prod) && mfs[i].month == month-1,mfs[i].prod.equals(prod) && mfs[i].month == month+1,mfs[i].prod.equals(prod) && mfs[i].month == month && quant>mfs[i].avg_1_quant && quant<mfs[i].avg_2_quant
+
+where year=1995
+
+5. =======++*++=======
+
+5.1 // variation
+
+cust,prod,avg_1_quant,avg_2_quant
+2
+cust,prod
+avg_1_quant,avg_2_quant
+mfs[i].cust.contains(cust) && mfs[i].prod.contains(prod),!mfs[i].cust.contains(cust) && mfs[i].prod.contains(prod)
+
+5.2 // variation
+
+cust,prod,avg_quant,avg_1_quant
+1
+cust,prod
+avg_quant,avg_1_quant
+!mfs[i].cust.contains(cust) && mfs[i].prod.contains(prod)
+
+
+6. =======++*++=======
+
+
+prod,quant
+2
+prod,quant
+count_1_prod,count_2_prod
+mfs[i].prod.contains(prod),mfs[i].prod.contains(prod) && mfs[i].quant < quant
+mfs[i].count_2_prod == Math.round(mfs[i].count_1_prod/2)
+
+
+=======**** Ad-hoc OLAP Queries Research paper ****=======
+
+Q3. =======++*++=======
+
+prod,month,count_1_prod,count_2_prod
+2
+prod,month
+count_1_prod,count_2_prod,avg_quant
+mfs[i].prod.equals(prod) && mfs[i].month == mfs[i].month-1 && quant>mfs[i].avg_quant,mfs[i].prod.equals(prod) && mfs[i].month == mfs[i].month+1 && quant>mfs[i].avg_quant
+
+
+
+Q4.  =======++*++=======
+
+Q4.1
+
+prod,month,year,(float)sum_1_quant/sum_2_quant
+2
+prod,month,year
+sum_1_quant,	sum_2_quant
+mfs[i].prod.contains(prod)&& mfs[i].month == month && mfs[i].year == year,mfs[i].prod.contains(prod) && mfs[i].year == year
+
+
+Q4.2  // variation
+
+prod,month,year,(float)sum_quant/sum_1_quant
+1
+prod,month,year
+sum_quant,sum_1_quant
+mfs[i].prod.contains(prod) && mfs[i].year == year
+
+
+

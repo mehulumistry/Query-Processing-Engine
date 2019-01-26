@@ -1,0 +1,5 @@
+| cust            |     avg_1_quant |     avg_2_quant |     avg_3_quant |
+
+
+| Knuth           |            2275 |             657 |             637 |
+| Sam             |            2764 |            1820 |            1840 |

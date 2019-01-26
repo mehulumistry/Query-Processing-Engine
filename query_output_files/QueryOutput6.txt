@@ -1,0 +1,13 @@
+| prod            | quant           |
+
+
+| Pepsi           | 2591            |
+| Yogurt          | 2336            |
+| Fruits          | 2525            |
+| Butter          | 1715            |
+| Cookies         | 2500            |
+| Eggs            | 2151            |
+| Coke            | 2681            |
+| Bread           | 1932            |
+| Milk            | 1839            |
+| Soap            | 2231            |

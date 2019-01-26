@@ -1,0 +1,5 @@
+prod,month,count_1_prod,count_2_prod
+2
+prod,month
+count_1_prod,count_2_prod,avg_quant
+mfs[i].prod.equals(prod) && mfs[i].month == mfs[i].month-1 && quant>mfs[i].avg_quant,mfs[i].prod.equals(prod) && mfs[i].month == mfs[i].month+1 && quant>mfs[i].avg_quant

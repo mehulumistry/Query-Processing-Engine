@@ -1,0 +1,7 @@
+prod,month,count_3_prod
+3
+prod,month
+count_3_prod,avg_1_quant,avg_2_quant
+mfs[i].prod.equals(prod) && mfs[i].month == month-1,mfs[i].prod.equals(prod) && mfs[i].month == month+1,mfs[i].prod.equals(prod) && mfs[i].month == month && quant>mfs[i].avg_1_quant && quant<mfs[i].avg_2_quant
+
+where year=1995
