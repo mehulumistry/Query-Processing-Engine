@@ -1,0 +1,7 @@
+prod, month,(float)sum_1_quant/sum_2_quant
+2
+prod,month
+sum_1_quant,sum_2_quant
+mfs[i].prod.equals(prod) && mfs[i].month == month,mfs[i].prod.equals(prod)
+
+where year=1995

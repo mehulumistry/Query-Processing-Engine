@@ -1,0 +1,5 @@
+prod,month,year,(float)sum_quant/sum_1_quant
+1
+prod,month,year
+sum_quant,sum_1_quant
+mfs[i].prod.contains(prod) && mfs[i].year == year

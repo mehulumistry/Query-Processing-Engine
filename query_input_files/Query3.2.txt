@@ -1,0 +1,7 @@
+cust,month,avg_1_quant,avg_3_quant,avg_2_quant
+3
+cust,month
+avg_1_quant,avg_3_quant,avg_2_quant
+mfs[i].cust.equals(cust) && mfs[i].month < month,mfs[i].cust.equals(cust) && mfs[i].month > month,mfs[i].cust.equals(cust) && mfs[i].month == month
+
+where year=1995

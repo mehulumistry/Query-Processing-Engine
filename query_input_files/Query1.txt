@@ -1,0 +1,7 @@
+cust,avg_1_quant,avg_2_quant,sum_3_quant,count_3_quant
+3
+cust
+avg_1_quant,avg_2_quant,sum_3_quant,count_3_quant
+mfs[i].cust.equals(cust) && state.equals("NY"),mfs[i].cust.equals(cust) && state.equals("NJ"),mfs[i].cust.equals(cust) && state.equals("CT")
+
+where year=1995

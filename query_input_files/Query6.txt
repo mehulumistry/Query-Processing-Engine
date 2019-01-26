@@ -1,0 +1,6 @@
+prod,quant
+2
+prod,quant
+count_1_prod,count_2_prod
+mfs[i].prod.contains(prod),mfs[i].prod.contains(prod) && mfs[i].quant < quant
+mfs[i].count_2_prod == Math.round(mfs[i].count_1_prod/2)

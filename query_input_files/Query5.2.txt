@@ -1,0 +1,5 @@
+cust,prod,avg_quant,avg_1_quant
+1
+cust,prod
+avg_quant,avg_1_quant
+!mfs[i].cust.contains(cust) && mfs[i].prod.contains(prod)
